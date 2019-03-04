@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,60 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppSignos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFm-qh-Qgc">
+                                <rect key="frame" x="0.0" y="10" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Signos" id="1I6-iK-Mzp"/>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-Ms-9vN">
+                                <rect key="frame" x="0.0" y="54" width="375" height="87"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eS9-J2-11y">
+                                <rect key="frame" x="0.0" y="141" width="375" height="526"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="6" id="jEQ-Hp-PRs">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="6"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jEQ-Hp-PRs" id="vXC-FV-V5d">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="5.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eS9-J2-11y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bo8-Yz-LEC"/>
+                            <constraint firstItem="Bwa-Ms-9vN" firstAttribute="top" secondItem="DFm-qh-Qgc" secondAttribute="bottom" id="HRA-XN-iWF"/>
+                            <constraint firstItem="eS9-J2-11y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LSR-1w-yl2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DFm-qh-Qgc" secondAttribute="trailing" id="NLU-Q7-X76"/>
+                            <constraint firstItem="DFm-qh-Qgc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="XBl-KN-byw"/>
+                            <constraint firstItem="DFm-qh-Qgc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c5D-Et-bZa"/>
+                            <constraint firstItem="eS9-J2-11y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eAc-Tx-kkk"/>
+                            <constraint firstItem="Bwa-Ms-9vN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gRH-Jw-9RJ"/>
+                            <constraint firstItem="Bwa-Ms-9vN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gkP-Ph-tj7"/>
+                            <constraint firstItem="eS9-J2-11y" firstAttribute="top" secondItem="Bwa-Ms-9vN" secondAttribute="bottom" id="wU3-b5-fdg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="signos" destination="eS9-J2-11y" id="Ayu-vi-Wnp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="321" height="87"/>
+    </resources>
 </document>
